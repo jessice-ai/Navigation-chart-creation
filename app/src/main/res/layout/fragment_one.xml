@@ -3,4 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.OneFragment" />
+    tools:context=".fragments.OneFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sun_list_item_Recyclerview_id"
+        tools:listitem="@layout/sun_cell"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
