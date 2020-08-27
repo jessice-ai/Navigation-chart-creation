@@ -30,25 +30,19 @@ class SunPageListAdapter : ListAdapter<SunUser, SunPageListAdapter.SunMyViewHold
     }
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): SunMyViewHolder {
         /**
-         * 加载一个视图出来，并创建一个Holder
-         * 然后把 holder 放到 SunMyViewHolder 里面
+         * onCreateViewHolder 方法作用： 加载一个视图出来，并创建一个 Holder
+         * 说明：只执行一次
          */
         val holder = SunMyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.sun_cell,parent,false))
-
         return holder
     }
 
     override fun onBindViewHolder(holder: SunMyViewHolder, position: Int) {
         /**
-         * 显示图片之前闪动
+         * onBindViewHolder 为每一项赋值
+         * 多少个元素，就运行多少次
          */
-        /**
-         * 这里方的内容，比如点击之后执行的操作 开始
-         */
-        //holder.itemView.imageView3 =
-        //println("Jessice:"+viewType)
-        println("Jessice:Picture----"+getItem(position).picture)
-
+        //println("Jessice:Picture----"+getItem(position).picture)
         var imgUrl = getItem(position).picture
         //holder.itemView.imageView3 = getItem(viewType).picture
 //        holder.itemView.shimmerlayout.shimmerColor = "0x55FFFFFF"
@@ -81,11 +75,9 @@ class SunPageListAdapter : ListAdapter<SunUser, SunPageListAdapter.SunMyViewHold
                      */
                     return false.also {
                         //shimmerLayout?.stopShimmerAnimation()
-
                         return false
                     }
                 }
-
             })
             .into(holder.itemView.imageView3)
         /**
